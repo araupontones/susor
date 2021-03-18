@@ -1,11 +1,17 @@
 Package: susor
 Type: Package
-Title: What the Package Does (Title Case)
-Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Title: Data Management of Surveys That Use Survey Solutions
+Version: 0.0.0.900
+Authors@R: person("Arau", "Andres", email = "andres.arau@outlook.com",role = c("aut","cre"))
+Maintainer: <andres.arau@outlook.com>
+Description: Facilitates the data management cycle of surveys that
+  use Survey Solutions to collect data. It is aimed to ease the process of
+  exporting data via Survey Solution's API; appending different versions; creating
+  download, raw, and clean directories to manage the data. And allows to create
+  a data frame to check the quality of the data as it is collected.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+RoxygenNote: 7.1.0
+Imports:
+  httr (>= 1.4.1)

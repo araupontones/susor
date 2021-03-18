@@ -1,2 +1,2 @@
-^.*\.Rproj$
-^\.Rproj\.user$
+^.*\.Rproj$ #automatically added by Rstudio
+^\.Rproj\.user$ #used for temporary files
