@@ -1,6 +1,8 @@
-.Rproj.user
+.Rproj.user/
 .Rhistory
 .RData
 .Ruserdata
 tests/
+downloads/
+raw/
 .gitgnore
