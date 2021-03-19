@@ -2,10 +2,7 @@
 % Please edit documentation in R/susor_generate_file.R
 \name{susor_generate_file}
 \alias{susor_generate_file}
-\title{Start file creation in server
-As for any other function of \code{susor}, \code{susor_generate_file} requires
-that you first define your credentials with \code{susor_credentials}.
-\code{susor_generate_file} will starts the file creation in the server.}
+\title{Start file creation in Survey Solution's server}
 \usage{
 susor_generate_file(
   susor_quid,
@@ -31,7 +28,6 @@ create .json file temporarly}
 Default = "STATA"}
 }
 \description{
-Start file creation in server
 As for any other function of \code{susor}, \code{susor_generate_file} requires
 that you first define your credentials with \code{susor_credentials}.
 \code{susor_generate_file} will starts the file creation in the server.

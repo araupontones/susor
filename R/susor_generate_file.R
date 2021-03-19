@@ -1,9 +1,10 @@
-#' Start file creation in server
-#' As for any other function of \code{susor}, \code{susor_generate_file} requires
-#' that you first define your credentials with \code{susor_credentials}.
-#' \code{susor_generate_file} will starts the file creation in the server.
+#' Start file creation in Survey Solution's server
+#'
+#' As for any other function of \code{susor}, \code{susor_generate_file()} requires
+#' that you first define your credentials with \code{susor_credentials()}.
+#' \code{susor_generate_file()} will tell the server to start the creation of the file.
 #' @param susor_quid A string. Questionnaire Identity. You can find it in
-#' the tibble \code{susor_questionnaires} that is created by \code{susor_credentials}
+#' the tibble \code{susor_questionnaires} that is created by \code{susor_credentials()}
 #' See ?\code{susor_credentials}
 #' @param susor_format A string to define the format of the file c("STATA", "Tabular").
 #' Default = "STATA"

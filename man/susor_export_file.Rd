@@ -2,15 +2,7 @@
 % Please edit documentation in R/susor_export_file.R
 \name{susor_export_file}
 \alias{susor_export_file}
-\title{Generates and downloads files from survey solution's server
-As for any other function of \code{susor}, \code{susor_export_file} requires
-that you first define your credentials with \code{susor_credentials()}.For
-\code{susor_export_file} it is required that you define \code{susor_dir_downloads}
-in \code{susor_credentials()}. \code{susor_dir_download} will be the diretory
-where the file will be unzipped and saved. Once that the questionnaire variable
-\code{susor_qn_variable}, and the version (\code{susor_qn_version}) are defined.
-\code{susor_export_file} will generate and download all the interviewers from
-that version of the questionnaire.}
+\title{Generates and downloads files from survey solution's server.}
 \usage{
 susor_export_file(
   susor_qn_variable,
@@ -22,13 +14,13 @@ susor_export_file(
 )
 }
 \arguments{
-\item{susor_qn_variable}{A string. Variable name of questionnaire, you can
+\item{susor_qn_variable}{A string. It is the variable name of questionnaire, you can
 find it in the tibble \code{susor_questionnaires} that is created by
-\code{susor_credentials}.}
+\code{susor_credentials()}.}
 
 \item{susor_qn_version}{A number. Versions number of the questionnaire
-to download, this can be found in he tibble \code{susor_questionnaires}
-that is created by  \code{susor_credentials}.}
+to download, this can be found in the tibble \code{susor_questionnaires}
+that is created by  \code{susor_credentials()}.}
 
 \item{susor_format}{A string to define the format of the file c("STATA", "Tabular").
 Default = "STATA"}
@@ -42,18 +34,16 @@ c( "All", "SupervisorAssigned", "InterviewerAssigned", "Completed", "RejectedByS
 API export response is temporally stored and unzipped from.}
 }
 \value{
-Unzipped file with the file saved in \code{susor_dir_downloads}. Define
-\code{susor_dir_downloads} in \code{susor_credentials}.
+Unzipped file with the file saved in \code{susor_dir_downloads}.
 }
 \description{
-Generates and downloads files from survey solution's server
-As for any other function of \code{susor}, \code{susor_export_file} requires
+As for any other function of \code{susor}, \code{susor_export_file()} requires
 that you first define your credentials with \code{susor_credentials()}.For
-\code{susor_export_file} it is required that you define \code{susor_dir_downloads}
-in \code{susor_credentials()}. \code{susor_dir_download} will be the diretory
+\code{susor_export_file()} it is required that you define \code{susor_dir_downloads}
+in \code{susor_credentials()}. \code{susor_dir_download} will be the directory
 where the file will be unzipped and saved. Once that the questionnaire variable
 \code{susor_qn_variable}, and the version (\code{susor_qn_version}) are defined.
-\code{susor_export_file} will generate and download all the interviewers from
+\code{susor_export_file()} will generate and download all the interviews from
 that version of the questionnaire.
 }
 \examples{

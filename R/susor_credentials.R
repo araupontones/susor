@@ -3,9 +3,9 @@
 
 
 
-#'Define Server credentials
+#'Define API credentials of your Survey Solutions server
 #'
-#'\code{susor_credentials} saves all your API credentials in the global
+#'\code{susor_credentials()} saves all your API credentials in the global
 #'environment. This function must be run before any other function of this
 #'package \code{susor}.
 #' @param susor_server A string. URL of your Survey Solution's server.

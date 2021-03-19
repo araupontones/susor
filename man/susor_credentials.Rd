@@ -2,7 +2,7 @@
 % Please edit documentation in R/susor_credentials.R
 \name{susor_credentials}
 \alias{susor_credentials}
-\title{Define Server credentials}
+\title{Define API credentials of your Survey Solutions server}
 \usage{
 susor_credentials(
   susor_server,
@@ -37,7 +37,7 @@ will be saved in your global environment. View this tibble to get: Questionnaire
 etc.
 }
 \description{
-\code{susor_credentials} saves all your API credentials in the global
+\code{susor_credentials()} saves all your API credentials in the global
 environment. This function must be run before any other function of this
 package \code{susor}.
 }

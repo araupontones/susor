@@ -1,20 +1,20 @@
-#' Generates and downloads files from survey solution's server
-#' As for any other function of \code{susor}, \code{susor_export_file} requires
+#' Generates and downloads files from survey solution's server.
+#'
+#' As for any other function of \code{susor}, \code{susor_export_file()} requires
 #' that you first define your credentials with \code{susor_credentials()}.For
-#' \code{susor_export_file} it is required that you define \code{susor_dir_downloads}
-#' in \code{susor_credentials()}. \code{susor_dir_download} will be the diretory
+#' \code{susor_export_file()} it is required that you define \code{susor_dir_downloads}
+#' in \code{susor_credentials()}. \code{susor_dir_download} will be the directory
 #' where the file will be unzipped and saved. Once that the questionnaire variable
 #' \code{susor_qn_variable}, and the version (\code{susor_qn_version}) are defined.
-#' \code{susor_export_file} will generate and download all the interviewers from
+#' \code{susor_export_file()} will generate and download all the interviews from
 #' that version of the questionnaire.
-#' @return Unzipped file with the file saved in \code{susor_dir_downloads}. Define
-#' \code{susor_dir_downloads} in \code{susor_credentials}.
-#' @param  susor_qn_variable A string. Variable name of questionnaire, you can
+#' @return Unzipped file with the file saved in \code{susor_dir_downloads}.
+#' @param  susor_qn_variable A string. It is the variable name of questionnaire, you can
 #' find it in the tibble \code{susor_questionnaires} that is created by
-#' \code{susor_credentials}.
+#' \code{susor_credentials()}.
 #' @param susor_qn_version A number. Versions number of the questionnaire
-#' to download, this can be found in he tibble \code{susor_questionnaires}
-#' that is created by  \code{susor_credentials}.
+#' to download, this can be found in the tibble \code{susor_questionnaires}
+#' that is created by  \code{susor_credentials()}.
 #' @param susor_format A string to define the format of the file c("STATA", "Tabular").
 #' Default = "STATA"
 #' @param susor_interview_status A string. To define the status of interviews to download
