@@ -2,11 +2,15 @@
 % Please edit documentation in R/susor_export_file.R
 \name{susor_export_file}
 \alias{susor_export_file}
-\title{As for any other function of \code{susor}, \code{susor_export_file} requires
+\title{Generates and downloads files from survey solution's server
+As for any other function of \code{susor}, \code{susor_export_file} requires
 that you first define your credentials with \code{susor_credentials()}.For
 \code{susor_export_file} it is required that you define \code{susor_dir_downloads}
 in \code{susor_credentials()}. \code{susor_dir_download} will be the diretory
-where the file will be unzipped and saved.}
+where the file will be unzipped and saved. Once that the questionnaire variable
+\code{susor_qn_variable}, and the version (\code{susor_qn_version}) are defined.
+\code{susor_export_file} will generate and download all the interviewers from
+that version of the questionnaire.}
 \usage{
 susor_export_file(
   susor_qn_variable,
@@ -42,11 +46,15 @@ Unzipped file with the file saved in \code{susor_dir_downloads}. Define
 \code{susor_dir_downloads} in \code{susor_credentials}.
 }
 \description{
+Generates and downloads files from survey solution's server
 As for any other function of \code{susor}, \code{susor_export_file} requires
 that you first define your credentials with \code{susor_credentials()}.For
 \code{susor_export_file} it is required that you define \code{susor_dir_downloads}
 in \code{susor_credentials()}. \code{susor_dir_download} will be the diretory
-where the file will be unzipped and saved.
+where the file will be unzipped and saved. Once that the questionnaire variable
+\code{susor_qn_variable}, and the version (\code{susor_qn_version}) are defined.
+\code{susor_export_file} will generate and download all the interviewers from
+that version of the questionnaire.
 }
 \examples{
 susor_exportfile(susor_qn_variable = "pupils_SLK"
