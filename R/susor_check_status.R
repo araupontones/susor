@@ -13,13 +13,13 @@ check_response <- function(status){
 
     stop(paste("Status:", status, "The request was a legal request, but the server",
                "is refusing to respond to it.",
-               "Check susor_user and susor_password in susor_credentials()"))
+               "Check susor_user and susor_password in susor_login()"))
 
 
   } else if (status == 404) { #bad server (client error)
 
     stop(paste("Status:", status, "The requested page could not be found but may be available again in the future",
-               "Check the definition of susor_server in susor_credentials()"))
+               "Check the definition of susor_server in susor_login()"))
 
   } else if (status >= 500 & status < 511) { #server side error
 

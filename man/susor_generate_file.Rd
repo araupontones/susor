@@ -13,22 +13,22 @@ susor_generate_file(
 }
 \arguments{
 \item{susor_quid}{A string. Questionnaire Identity. You can find it in
-the tibble \code{susor_questionnaires} that is created by \code{susor_credentials}
-See ?\code{susor_credentials}}
+the tibble \code{susor_questionnaires} that is created by \code{susor_login()}
+See ?\code{susor_login}}
 
 \item{susor_interview_status}{A string. To define the status of interviews to download
 c( "All", "SupervisorAssigned", "InterviewerAssigned", "Completed", "RejectedBySupervisor",
  "ApprovedBySupervisor", "RejectedByHeadquarters", "ApprovedByHeadquarters").
  Default = "ALL"
 
-define API
-create .json file temporarly}
+define query to start the creation process in the server
+create .json file temporarly to store the server's response}
 
 \item{susor_format}{A string to define the format of the file c("STATA", "Tabular").
 Default = "STATA"}
 }
 \description{
-As for any other function of \code{susor}, \code{susor_generate_file} requires
-that you first define your credentials with \code{susor_credentials}.
-\code{susor_generate_file} will starts the file creation in the server.
+As for any other function of \code{susor}, \code{susor_generate_file()} requires
+that you first define your credentials with \code{susor_login()}.
+\code{susor_generate_file()} will tell the server to start the creation of the file.
 }

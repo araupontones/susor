@@ -7,19 +7,19 @@
 susor_get_questionnaires(susor_limit = 40, ...)
 }
 \arguments{
-\item{susor_limit}{A number. ALimit number of returned rows. Max allowed
-value is 40. Default value is 40}
+\item{susor_limit}{A number. Limit number of returned rows. Max allowed
+value is 40. Default=40}
 }
 \value{
 A tibble named \code{susor_questionnaires} saved in your global
 environment
 }
 \description{
-Before running \code{susor_get_questionnaires}, provide your server credentials
-by running \code{susor_credentials}. \code{susor_get_questionnaires} gets
+Before running \code{susor_get_questionnaires()}, provide your server credentials
+by running \code{susor_login()}. \code{susor_get_questionnaires()} gets
 the list of imported questionnaires in the server and transforms
-this list into a tibble that is saved in your global environment under
-the name of \code{susor_questionnaires}.
+this list into a tibble that is saved in your global environment as
+\code{susor_questionnaires}.
 }
 \examples{
 susor_get_questionnaires(susor_limit = 20)
