@@ -33,6 +33,10 @@ A directory with the appended file(s) will be saved in `susor_dir_raw`.
 
 
 ```{r eval=FALSE}
+#install and load susor
+devtools::install_github("araupontones/susor")
+library(susor)
+
 library(httr)
 library(jsonlite)
 library(lubridate) 
