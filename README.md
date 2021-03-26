@@ -13,6 +13,7 @@ Also, feel free to collaborate on making `susor` easier and more efficient to us
 * Gets the list of imported questionnaires with `susor_login()` or with `susor_get_questionnaires()`,
 * Generates and downloads files from the server to your local drive with `susor_export_file()`, and
 * Appends different versions of the same questionnaire with `susor_append_versions()`
+* Approves interviews as headquarters with `susor_approve_hq()`
 
 
 Each of the above functions is documented. 
@@ -28,6 +29,8 @@ Each of the above functions is documented.
 
 4. Pass `susor_qn_variable` to `susor_append_versions()` to append all the versions of the same questionnaire.
 A directory with the appended file(s) will be saved in `susor_dir_raw`.
+
+5. After having checked the quality of each interview, pass a vector `susor_interview_key` to `susor_approve_hq` to approve these interviews in the server.
 
 ## Basic example
 
@@ -78,9 +81,24 @@ susor_append_versions(susor_qn_variable = "best_goals",
                       susor_format = "STATA"
                       )
 
+#Import raw data --------------------------------------------------------------
+
+df_raw = import(file.path(susor_dir_raw, "best_goals.dta")
+
+#Approve interviews as headquarters
+
+#define interview__key of interviews to approve by HQ
+to_approve <- c("00-06-27-10","00-78-23-02" )
+
+#approve interviews using 'susor_approve_hq'
+susor_approve_hq(susor_interview_key = to_approve,
+                 by = "interview__key",
+                 susor_data_reference = raw
+                 )
 
 
 ```
+
 
 ## What I am working on (in next versions)
 
