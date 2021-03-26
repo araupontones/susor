@@ -28,9 +28,13 @@ Each of the above functions is documented.
 3. Pass the questionnaire variable and version `susor_qn_variable` and `susor_qn_version` to `susor_export_file()`, the result of this will be a folder with the unzipped version of that file in the directory (`susor_dir_download`) that you defined in step 1.
 
 4. Pass `susor_qn_variable` to `susor_append_versions()` to append all the versions of the same questionnaire.
-A directory with the appended file(s) will be saved in `susor_dir_raw`.
+A directory with the appended file(s) will be saved in `susor_dir_raw`. The default of this function will fetch key variables from interview__diagnostics and interview__actions. You can turn this off by setting `get_diagnostics == FALSE`. (see `?susor_append_versions`)
 
-5. After having checked the quality of each interview, pass a vector `susor_interview_key` to `susor_approve_hq` to approve these interviews in the server.
+5. After having checked the quality of each interview, pass a vector `susor_interview_key` to `susor_approve_hq()` to approve these interviews in the server.
+
+Other useful functions from `susor`:
+
+* `susor_get_diagnostics()` gets the variables from interview__diagnostics and the last action from interview__actions. It also creates a variable called link that is the _url_ to the interview in the server (useful for QAing). See `?susor_get_diagnostics`
 
 ## Basic example
 
@@ -40,6 +44,7 @@ A directory with the appended file(s) will be saved in `susor_dir_raw`.
 devtools::install_github("araupontones/susor")
 library(susor)
 
+library(glue)
 library(httr)
 library(jsonlite)
 library(lubridate) 
@@ -105,7 +110,8 @@ susor_approve_hq(susor_interview_key = to_approve,
 I am working on functions to ease the use of interview__diagnostics and interview__actions so they can be included in the regular checks during a data collection
 
 The link and chart below were used to develop the code that interacts with the server via the API. Both were obtained from the support site of Survey Silutions:
-https://demo.mysurvey.solutions/apidocs/index.html
+<a href="https://demo.mysurvey.solutions/apidocs/index.html">Survey Solutions API</a>
 
 ![](https://raw.githubusercontent.com/araupontones/Survey_Solutions_download/main/API_flow.png)
+
 

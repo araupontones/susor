@@ -10,6 +10,8 @@
 #' are to be appended
 #' @param susor_format A string. Format of the downloaded data c("STATA", "Tabular").
 #' Default = "STATA"
+#' @param get_diagnostics A boolean. If True, the appended version will include the
+#' variables from the interview__diagnostics file and the last action reported in interview__actions
 #' @return A directory with the appended file(s) with all the versions of \code{susor_qn_variable} saved
 #' in \code{susor_dir_raw}.
 
@@ -17,7 +19,8 @@
 
 
 susor_append_versions <- function (susor_qn_variable,
-                                   susor_format = "STATA"
+                                   susor_format = "STATA",
+                                   get_diagostics = T
 ) {
 
   #check that rio is loaded
@@ -40,7 +43,7 @@ susor_append_versions <- function (susor_qn_variable,
   #create directory for raw data
 
   exdir <- file.path(susor_dir_raw, susor_qn_variable)
-  print(exdir)
+
   if (!dir.exists(susor_dir_raw)) {
 
     dir.create(susor_dir_raw)
@@ -90,6 +93,20 @@ susor_append_versions <- function (susor_qn_variable,
     # append and export
     do.call(plyr::rbind.fill, append) %>%
       export(exdir_q)
+  }
+
+
+  if (get_diagostics) {
+
+    questionnaire_with_diagnostics = susor_get_diagostics(data_directory =  susor_dir_raw,
+                                                          susor_qn_variable = susor_qn_variable)
+
+    exfile = file.path(exdir, paste0(susor_qn_variable,".dta"))
+
+    #export file to raw folder
+    export(questionnaire_with_diagnostics, exfile)
+
+
   }
 
 }

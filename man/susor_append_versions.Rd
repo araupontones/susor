@@ -4,7 +4,11 @@
 \alias{susor_append_versions}
 \title{Appends all versions of a questionnaire and saves appended data in \code{susor_dir_raw}}
 \usage{
-susor_append_versions(susor_qn_variable, susor_format = "STATA")
+susor_append_versions(
+  susor_qn_variable,
+  susor_format = "STATA",
+  get_diagostics = T
+)
 }
 \arguments{
 \item{susor_qn_variable}{A string. The variable name of questionnaire which versions
@@ -12,6 +16,9 @@ are to be appended}
 
 \item{susor_format}{A string. Format of the downloaded data c("STATA", "Tabular").
 Default = "STATA"}
+
+\item{get_diagnostics}{A boolean. If True, the appended version will include the
+variables from the interview__diagnostics file and the last action reported in interview__actions}
 }
 \value{
 A directory with the appended file(s) with all the versions of \code{susor_qn_variable} saved
