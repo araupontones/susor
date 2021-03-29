@@ -46,8 +46,9 @@ susor_get_diagostics <- function(data_directory ,
            interview__duration = hms(str_remove(interview__duration, "[0-9]{1,}\\.")),
            interview__duration = round(period_to_seconds(interview__duration) / 60, digits = 0)
     ) %>%
-    left_join(actions, by=c("interview__key", "interview__id")) #get interview last action
-
+    left_join(actions, by=c("interview__key", "interview__id")) %>%#get interview last action
+  #this variable is giving errors. check why!
+    select(-assignment__id)
 
 
   return(output_file)
