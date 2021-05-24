@@ -4,7 +4,7 @@
 \alias{susor_get_diagostics}
 \title{Gets interview diagnostics and actions into the main questionnaire}
 \usage{
-susor_get_diagostics(data_directory = susor_dir_raw, susor_qn_variable)
+susor_get_diagostics(data_directory, susor_qn_variable)
 }
 \arguments{
 \item{data_directory}{A directory. The directory where the data is stored. This
@@ -13,6 +13,11 @@ interview__actions.dta and the questionnaire for which the indicators will be at
 
 \item{susor_qn_variable}{The variable name of questionnaire which versions
 are to be appended}
+}
+\value{
+A tibble of the questionnaire (susor_qn_variable) with the variables
+from interview__diagnostics, the last action of the interview, and the url
+link to the interview
 }
 \description{
 Gets interview diagnostics and actions into the main questionnaire

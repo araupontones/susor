@@ -36,6 +36,8 @@ Other useful functions from `susor`:
 
 * `susor_get_diagnostics()` gets the variables from interview__diagnostics and the last action from interview__actions. It also creates a variable called link that is the _url_ to the interview in the server (useful for QAing). See `?susor_get_diagnostics`
 
+*`susor_get_assignments()` returns a tible with the details of the assignment by questionnaire and version
+
 ## Basic example
 
 
