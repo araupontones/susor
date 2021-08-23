@@ -49,6 +49,14 @@ susor_append_versions <- function (susor_qn_variable,
     dir.create(susor_dir_raw)
     #create raw directory of the questionnaire
 
+    #dir.create(exdir)
+
+  }
+
+  if (!dir.exists(exdir)) {
+
+    #create raw directory of the questionnaire
+
     dir.create(exdir)
 
   }
