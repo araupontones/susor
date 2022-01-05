@@ -111,7 +111,7 @@ susor_approve_hq(susor_interview_key = to_approve,
 
 I am working on functions to ease the use of interview__diagnostics and interview__actions so they can be included in the regular checks during a data collection
 
-The link and chart below were used to develop the code that interacts with the server via the API. Both were obtained from the support site of Survey Silutions:
+The link and chart below were used to develop the code that interacts with the server via the API. Both were obtained from the support site of Survey Solutions:
 <a href="https://demo.mysurvey.solutions/apidocs/index.html">Survey Solutions API</a>
 
 ![](https://raw.githubusercontent.com/araupontones/Survey_Solutions_download/main/API_flow.png)
