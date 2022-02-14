@@ -15,6 +15,9 @@
 #' Default = 'downloads'.
 #' @param susor_dir_raw A string. Path to the directory where the raw data will
 #' be stored in your local drive.Default = 'raw.
+#' @param limit A number. Limit number of returned rows. Max allowed
+#' value is 40. Default=40
+#' @param offset Page number starting from 1. Default = 1
 #' @return  All the parameters provided to the function (\code{susor_server},
 #' \code{susor_user}, \code{susor_password}, \code{susor_dir_downloads}, and
 #' \code{susor_dir_raw}) will be saved in your global environment so can be used
@@ -34,31 +37,35 @@
 #'
 
 susor_login = function(susor_server,
-                             susor_user,
-                             susor_password,
-                             susor_dir_downloads = 'downloads',
-                             susor_dir_raw = 'raw',
-                             ...){
+                       susor_user,
+                       susor_password,
+                       susor_dir_downloads = 'downloads',
+                       susor_dir_raw = 'raw',
+                       limit = 40,
+                       ofset = 1,
+                       ...){
 
   names <- c("susor_server", "susor_user", "susor_password", "susor_dir_downloads", "susor_dir_raw")
   values <-  c(susor_server,susor_user, susor_password, susor_dir_downloads, susor_dir_raw)
 
   #save parameters in global directory
   invisible(
-  lapply(seq_along(1:length(names)),
-         function(x){
+    lapply(seq_along(1:length(names)),
+           function(x){
 
-           message(paste(names[[x]], "stored in global environment"))
-           assign(names[[x]], value = values[[x]], envir = .GlobalEnv)
-         })
+             message(paste(names[[x]], "stored in global environment"))
+             assign(names[[x]], value = values[[x]], envir = .GlobalEnv)
+           })
   )
 
 
-#get questionnaires
- susor_get_questionnaires()
+  #get questionnaires
+  susor_get_questionnaires(susor_limit = limit,
+                           susor_offset = ofset)
 
 
 }
+
 
 
 

@@ -9,6 +9,7 @@
 
 #' @param susor_limit A number. Limit number of returned rows. Max allowed
 #' value is 40. Default=40
+#' @param susor_offset Page number starting from 1. Default = 1
 #' @return A tibble named \code{susor_questionnaires} saved in your global
 #' environment
 #' @examples
@@ -17,7 +18,9 @@
 
 
 
-susor_get_questionnaires = function(susor_limit = 40, ...){
+susor_get_questionnaires = function(susor_limit = 40,
+                                    susor_offset = 1,
+                                    ...){
 
   #check if needed packages are loaded
   pks <- c("httr", "dplyr", "lubridate")
@@ -51,7 +54,8 @@ susor_get_questionnaires = function(susor_limit = 40, ...){
   ## get all questionnaires from the server
   qn_details <- GET(api_questoinnaires,
                     authenticate(susor_user, susor_password),
-                    query = list(limit = susor_limit),
+                    query = list(limit = susor_limit,
+                                 offset = susor_offset),
                     write_disk(my_json, overwrite = T)
   )
 
