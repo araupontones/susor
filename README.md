@@ -14,6 +14,7 @@ Also, feel free to collaborate on making `susor` easier and more efficient to us
 * Generates and downloads files from the server to your local drive with `susor_export_file()`, and
 * Appends different versions of the same questionnaire with `susor_append_versions()`
 * Approves interviews as headquarters with `susor_approve_hq()`
+* Downloads the list of interviewers in the specific supervisor team
 
 
 Each of the above functions is documented. 
@@ -37,6 +38,8 @@ Other useful functions from `susor`:
 * `susor_get_diagnostics()` gets the variables from interview__diagnostics and the last action from interview__actions. It also creates a variable called link that is the _url_ to the interview in the server (useful for QAing). See `?susor_get_diagnostics`
 
 *`susor_get_assignments()` returns a tible with the details of the assignment by questionnaire and version
+
+* `susor_get_interviewers()` retuns a tibble with the list of interviewers in a specific supervisor team
 
 ## Basic example
 
