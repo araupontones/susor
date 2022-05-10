@@ -4,11 +4,13 @@
 \alias{susor_get_questionnaires}
 \title{Get details from questionnaires imported in the server}
 \usage{
-susor_get_questionnaires(susor_limit = 40, ...)
+susor_get_questionnaires(susor_limit = 40, susor_offset = 1, ...)
 }
 \arguments{
 \item{susor_limit}{A number. Limit number of returned rows. Max allowed
 value is 40. Default=40}
+
+\item{susor_offset}{Page number starting from 1. Default = 1}
 }
 \value{
 A tibble named \code{susor_questionnaires} saved in your global

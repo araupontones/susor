@@ -10,6 +10,8 @@ susor_login(
   susor_password,
   susor_dir_downloads = "downloads",
   susor_dir_raw = "raw",
+  limit = 40,
+  ofset = 1,
   ...
 )
 }
@@ -27,6 +29,11 @@ Default = 'downloads'.}
 
 \item{susor_dir_raw}{A string. Path to the directory where the raw data will
 be stored in your local drive.Default = 'raw.}
+
+\item{limit}{A number. Limit number of returned rows. Max allowed
+value is 40. Default=40}
+
+\item{offset}{Page number starting from 1. Default = 1}
 }
 \value{
 All the parameters provided to the function (\code{susor_server},

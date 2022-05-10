@@ -67,8 +67,17 @@ susor_get_questionnaires = function(susor_limit = 40,
   response_json <- jsonlite::fromJSON(my_json)
 
 
-  tibble_qndetails <-tibble(response_json$Questionnaires) %>%
-    mutate(LastEntryDate = ymd_hms(str_replace(LastEntryDate, "T", " ")))
+  tibble_qndetails <-tibble(response_json$Questionnaires)
+
+  if(nrow(tibble_qndetails) >0) {
+
+    tibble_qndetails <- tibble_qndetails %>%
+     mutate(LastEntryDate = ymd_hms(str_replace(LastEntryDate, "T", " ")))
+  } else {
+
+    cli::cli_alert_warning(paste("There are no questionnaires in", susor_server))
+  }
+
 
   #save questionnaire details in the global environment
   assign("susor_questionnaires", tibble_qndetails, .GlobalEnv)
