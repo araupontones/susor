@@ -15,6 +15,7 @@ Also, feel free to collaborate on making `susor` easier and more efficient to us
 * Appends different versions of the same questionnaire with `susor_append_versions()`
 * Approves interviews as headquarters with `susor_approve_hq()`
 * Downloads the list of interviewers in the specific supervisor team
+* Updates list of interviewers into the server using `susor_post_interviewers()`
 
 
 Each of the above functions is documented. 
@@ -39,7 +40,9 @@ Other useful functions from `susor`:
 
 *`susor_get_assignments()` returns a tible with the details of the assignment by questionnaire and version
 
-* `susor_get_interviewers()` retuns a tibble with the list of interviewers in a specific supervisor team
+* `susor_get_interviewers()` returns a tibble with the list of interviewers in a specific supervisor team
+
+* `susor_post_interviewers()` updates list of interviewers in the server
 
 ## Basic example
 
