@@ -30,10 +30,10 @@ susor_get_diagostics <- function(data_directory ,
     #get labels from stata
     mutate(across(all_of("action"), susor_get_stata_labels),
            date = ymd(date)) %>%
-    filter(action != "Paused") %>%
+    dplyr::filter(action != "Paused") %>%
     arrange(interview__key, date, time) %>%
     group_by(interview__key) %>%
-    filter(row_number() == n()) %>% #keep interview last action
+    dplyr::filter(row_number() == n()) %>% #keep interview last action
     rename(last_action = action) %>%
     select(interview__key, interview__id, date, time, last_action)
 
